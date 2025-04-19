@@ -32,6 +32,11 @@
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
         }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -40,7 +45,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="text-2xl font-bold glow-text">Dr. Zeeshan Ali Khan</div>
-                <div class="space-x-4">
+                <div class="space-x-4 hidden md:block">
                     <a href="#home" class="text-gray-300 hover:text-white transition">Home</a>
                     <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
                     <a href="#experience" class="text-gray-300 hover:text-white transition">Experience</a>
@@ -52,11 +57,14 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center section-spacing gradient-bg">
-        <div class="text-center max-w-3xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 glow-text">Dr. Zeeshan Ali Khan, M.B.B.S.</h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8">ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation</p>
-            <a href="#contact" class="inline-block bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition hover-scale">Get in Touch</a>
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center section-spacing gradient-bg text-center">
+        <img src="zeeshan.jpg" alt="Dr. Zeeshan Ali Khan" class="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-white mb-6">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 glow-text">Dr. Zeeshan Ali Khan, M.B.B.S.</h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-6">ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation</p>
+        <div class="space-x-4">
+            <a href="tel:+18156771094" class="inline-block bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition">Call Me</a>
+            <a href="https://www.linkedin.com/in/zeeshan-ali-khan" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">LinkedIn</a>
+            <a href="Zeeshan_Khan_Resume.pdf" download class="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-600 transition">Download Resume</a>
         </div>
     </section>
 
@@ -74,12 +82,11 @@
     <section id="experience" class="section-spacing gradient-bg">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold mb-8 text-center glow-text">Clinical Experience</h2>
-            <div class="space-y-8">
+            <div class="space-y-8 text-gray-300">
                 <div class="bg-gray-900 p-6 rounded-lg hover-scale">
                     <h3 class="text-xl font-semibold">Medical Extern – Internal Medicine & Critical Care</h3>
-                    <p class="text-lg text-gray-300">Holy Cross Hospital / Excellent Medical Associates, Chicago, IL</p>
-                    <p class="text-md text-gray-400">June 2024 – Present</p>
-                    <ul class="mt-4 list-disc list-inside text-gray-300">
+                    <p>Holy Cross Hospital / Excellent Medical Associates, Chicago, IL (June 2024 – Present)</p>
+                    <ul class="list-disc list-inside mt-2">
                         <li>Managed ICU patients, focusing on ventilatory support, hemodynamic monitoring, and sepsis management.</li>
                         <li>Conducted comprehensive assessments for Sepsis, Acute Respiratory Failure, multi-organ dysfunction, and cardiovascular compromise.</li>
                         <li>Assisted in post-ICU recovery planning and patient follow-up.</li>
@@ -87,29 +94,113 @@
                 </div>
                 <div class="bg-gray-900 p-6 rounded-lg hover-scale">
                     <h3 class="text-xl font-semibold">Medical Extern – Cardiology & Intensive Care</h3>
-                    <p class="text-lg text-gray-300">St. Mary Medical Center, Hobart, IN</p>
-                    <p class="text-md text-gray-400">April 2024 – May 2024</p>
-                    <ul class="mt-4 list-disc list-inside text-gray-300">
+                    <p>St. Mary Medical Center, Hobart, IN (April 2024 – May 2024)</p>
+                    <ul class="list-disc list-inside mt-2">
                         <li>Rotated in ICU, Cath Lab, and cardiac wards, managing acute coronary syndromes and arrhythmias.</li>
                         <li>Gained expertise in EKGs, echocardiograms, and angiography interpretation.</li>
                         <li>Assisted in pre-operative risk assessment and clearance for cardiac procedures.</li>
                     </ul>
                 </div>
-                <!-- Add more experiences as needed -->
+                <div class="bg-gray-900 p-6 rounded-lg hover-scale">
+                    <h3 class="text-xl font-semibold">Medical Intern – Inpatient Wards</h3>
+                    <p>Desert Valley Hospital, Victorville, CA (June 2023 – October 2023)</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Managed patients with Sepsis, pneumonia, diabetes complications, and multi-organ dysfunction.</li>
+                        <li>Presented a case report on pulmonary embolism and joined journal clubs and didactics.</li>
+                        <li>Enhanced diagnostic and clinical decision-making skills.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg hover-scale">
+                    <h3 class="text-xl font-semibold">Medical Extern – Critical Care & Internal Medicine</h3>
+                    <p>Silver Cross Hospital, New Lenox, IL (February 2024 – April 2024)</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Worked in ICU and step-down units with critically ill patients.</li>
+                        <li>Focused on ventilatory and hemodynamic support, ARDS, and sepsis.</li>
+                        <li>Improved echocardiography and bedside evaluation skills.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg hover-scale">
+                    <h3 class="text-xl font-semibold">Medical Extern – Internal Medicine</h3>
+                    <p>UW Health SwedishAmerican Hospital, Rockford, IL (June 2022 – July 2022)</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Provided inpatient and outpatient care with focus on chronic disease management.</li>
+                        <li>Participated in diagnostic evaluations and treatment planning.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg hover-scale">
+                    <h3 class="text-xl font-semibold">Clinical Care Coordinator / Medical Chart Reviewer</h3>
+                    <p>Excellent Medical Associates, Orland Park, IL (March 2022 – May 2023)</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Managed 15–17 homebound patients daily, including history and physicals.</li>
+                        <li>Worked on documentation and diagnosis coding for optimal reimbursement.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg hover-scale">
+                    <h3 class="text-xl font-semibold">Duty Medical Officer (COVID-19 Response & General Medicine)</h3>
+                    <p>Telangana Institute of Medical Sciences, Hyderabad, India (September 2021 – March 2022)</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Managed COVID-19 patients with evidence-based care.</li>
+                        <li>Participated in bedside rounds and led outreach for vaccination awareness.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg hover-scale">
+                    <h3 class="text-xl font-semibold">Medical Officer – Outpatient & Preventive Medicine</h3>
+                    <p>Government PHC, Hyderabad, India (September 2019 – September 2021)</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Handled high-volume outpatient care for chronic conditions and preventive medicine.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section-spacing">
+    <!-- Clinical Skills -->
+    <section class="section-spacing">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center glow-text">Education</h2>
-            <div class="bg-gray-900 p-6 rounded-lg hover-scale">
-                <h3 class="text-xl font-semibold">Bachelor of Medicine and Bachelor of Surgery (M.B.B.S.)</h3>
-                <p class="text-lg text-gray-300">Shadan Institute of Medical Sciences, NTR University of Health Sciences, Hyderabad, India</p>
-                <p class="text-md text-gray-400">2012 – 2019</p>
-                <p class="text-lg text-gray-300 mt-2">ECFMG Certified</p>
-            </div>
+            <h2 class="text-3xl font-bold mb-8 text-center glow-text">Clinical & Documentation Skills</h2>
+            <ul class="list-disc list-inside text-gray-300">
+                <li>Clinical Documentation Integrity (CDI): Familiar with DRG, APR-DRGs, SOI documentation and reimbursement optimization.</li>
+                <li>EMR Systems: Proficient in EPIC, Meditech, NextGen, OmniMD, Practice Fusion.</li>
+                <li>Strong clinical acumen in internal medicine and critical care.</li>
+                <li>Excellent communication and teamwork skills.</li>
+                <li>High attention to detail for precise documentation and care.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Research & Publications -->
+    <section class="section-spacing gradient-bg">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center glow-text">Research & Publications</h2>
+            <ul class="list-disc list-inside text-gray-300">
+                <li>Finalist, ACP Southern California Poster Presentation (2024): "Undiagnosed Hashimoto’s Thyroiditis Presenting as Severe Pericardial Effusion."</li>
+                <li>Co-authored peer-reviewed articles in <em>The Lancet</em> and <em>Canadian Journal of Physiology and Pharmacology</em>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Awards, Certifications, Memberships -->
+    <section class="section-spacing">
+        <div class="max-w-5xl mx-auto text-gray-300">
+            <h2 class="text-3xl font-bold mb-8 text-center glow-text">Honors & Certifications</h2>
+            <ul class="list-disc list-inside">
+                <li>Excellence in Medical Research Award (2023)</li>
+                <li>Young Medical Achiever Award (2023)</li>
+                <li>ACLS Certified (valid through July 2025)</li>
+                <li>BLS Certified (valid through July 2025)</li>
+                <li>ECFMG Certification</li>
+                <li>Missouri Assistant Physician License</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-8">Professional Memberships</h3>
+            <ul class="list-disc list-inside">
+                <li>American College of Physicians (ACP)</li>
+                <li>Society of Hospital Medicine</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-8">Skills & Interests</h3>
+            <ul class="list-disc list-inside">
+                <li>Strong clinical acumen, research, and documentation expertise</li>
+                <li>Enjoys team sports, fitness, and nutrition-focused cooking</li>
+            </ul>
         </div>
     </section>
 
