@@ -7,550 +7,708 @@
     <meta name="description" content="Dr. Zeeshan Ali Khan, M.B.B.S. ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation">
     <meta name="keywords" content="Dr. Zeeshan Ali Khan, Internal Medicine, Clinical Documentation, Physician, ECFMG Certified">
     <meta name="author" content="Dr. Zeeshan Ali Khan">
-    
-    <!-- Open Graph / Facebook -->
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drzeeshanalikhan.github.io">
     <meta property="og:title" content="Dr. Zeeshan Ali Khan">
     <meta property="og:description" content="Dr. Zeeshan Ali Khan, M.B.B.S. ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation">
     <meta property="og:image" content="https://github.com/drzeeshanalikhan/drzeeshanalikhan.github.io/raw/main/zeeshan.jpg">
-    
-    <!-- Twitter -->
+
+    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dr. Zeeshan Ali Khan">
     <meta name="twitter:description" content="Dr. Zeeshan Ali Khan, M.B.B.S. ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation">
     <meta name="twitter:image" content="https://github.com/drzeeshanalikhan/drzeeshanalikhan.github.io/raw/main/zeeshan.jpg">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #f5f5f7;
-            color: #1d1d1f;
-            line-height: 1.5;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
         }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+        /* Glassmorphism for navbar */
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            z-index: 50;
-            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 64px;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #000;
-        }
-
-        .nav-links a {
-            margin-left: 24px;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #6e6e73;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #0071e3;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(180deg, #ffffff, #f5f5f7);
-            padding: 80px 20px;
-        }
-
-        .hero img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            margin-bottom: 24px;
-            object-fit: cover;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: #000;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #6e6e73;
-            max-width: 600px;
-            margin-bottom: 32px;
-        }
-
-        .hero .cta-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .cta-button {
-            background-color: #0071e3;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 24px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #005bb5;
-        }
-
-        .cta-button.secondary {
-            background-color: #1d1d1f;
-        }
-
-        .cta-button.secondary:hover {
-            background-color: #333;
-        }
-
-        /* Sections */
-        .section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #000;
-        }
-
-        .section p, .section li {
-            font-size: 1.1rem;
-            color: #6e6e73;
-        }
-
+        /* Card hover effects */
         .card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
-
-        .card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 8px;
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .card p {
-            font-size: 1.1rem;
-            color: #6e6e73;
-            margin-bottom: 8px;
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
         }
-
-        .card ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 8px;
+        /* Scale animation for buttons */
+        .btn {
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
-
-        .gradient-bg {
-            background: linear-gradient(180deg, #ffffff, #f5f5f7);
-        }
-
-        /* Timeline for Experience Section */
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background: #e5e5ea;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            width: 50%;
-            padding-right: 40px;
-        }
-
-        .timeline-item.right {
-            left: 50%;
-            padding-right: 0;
-            padding-left: 40px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 16px;
-            right: -10px;
-            width: 20px;
-            height: 20px;
-            background: #0071e3;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            z-index: 1;
-        }
-
-        .timeline-item.right::before {
-            left: -10px;
-            right: auto;
-        }
-
-        .timeline-content {
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-4px);
-        }
-
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            font-size: 1.1rem;
-            color: #6e6e73;
-            margin-bottom: 8px;
-        }
-
-        .timeline-content ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 8px;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            text-align: center;
-        }
-
-        .contact-section p {
-            margin-bottom: 16px;
-        }
-
-        .contact-section a {
-            color: #0071e3;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .hero img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 40px;
-                padding-right: 20px;
-            }
-
-            .timeline-item.right {
-                left: 0;
-                padding-left: 40px;
-                padding-right: 20px;
-            }
-
-            .timeline-item::before {
-                left: 10px;
-                right: auto;
-            }
-
-            .timeline-item.right::before {
-                left: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
+        .btn:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 antialiased">
     <!-- Navbar -->
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">Dr. Zeeshan Ali Khan</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#research">Research</a>
-                <a href="#honors">Honors</a>
-                <a href="#contact">Contact</a>
+    <nav class="fixed top-0 left-0 w-full nav-blur z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="text-xl sm:text-2xl font-bold text-blue-700">Dr. Zeeshan Ali Khan</div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <a href="#home" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">About</a>
+                    <a href="#education" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">Education</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">Experience</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">Skills</a>
+                    <a href="#research" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">Research</a>
+                    <a href="#honors" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">Honors</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-700 font-medium transition-colors duration-200">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-b border-gray-100">
+            <div class="px-4 py-4 space-y-2">
+                <a href="#home" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">Home</a>
+                <a href="#about" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">About</a>
+                <a href="#education" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">Education</a>
+                <a href="#experience" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">Experience</a>
+                <a href="#skills" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">Skills</a>
+                <a href="#research" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">Research</a>
+                <a href="#honors" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">Honors</a>
+                <a href="#contact" class="block text-gray-600 hover:text-blue-700 font-medium transition-colors py-2">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <img src="https://github.com/drzeeshanalikhan/drzeeshanalikhan.github.io/raw/main/zeeshan.jpg" 
-             alt="Dr. Zeeshan Ali Khan" 
-             class="profile-img">
-        <h1>Dr. Zeeshan Ali Khan, M.B.B.S.</h1>
-        <p>ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation</p>
-        <div class="cta-buttons">
-            <a href="tel:+18156771094" class="cta-button">Call Me</a>
-            <a href="https://www.linkedin.com/in/zeeshan-ali-khan-399661219" target="_blank" class="cta-button">LinkedIn</a>
-            <a href="Zeeshan_Khan_Resume.pdf" download class="cta-button secondary">Download Resume</a>
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+        <div class="text-center px-4 sm:px-6 fade-in">
+            <img src="https://github.com/drzeeshanalikhan/drzeeshanalikhan.github.io/raw/main/zeeshan.jpg" alt="Dr. Zeeshan Ali Khan" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto border-4 border-white shadow-md mb-6 object-cover">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">Dr. Zeeshan Ali Khan, M.B.B.S.</h1>
+            <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation</p>
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <a href="tel:+18156771094" class="bg-blue-700 text-white px-6 py-3 rounded-full font-medium btn hover:bg-blue-800">Call Me</a>
+                <a href="https://www.linkedin.com/in/zeeshan-ali-khan-399661219" target="_blank" class="bg-indigo-700 text-white px-6 py-3 rounded-full font-medium btn hover:bg-indigo-800">LinkedIn</a>
+                <a href="Zeeshan_Khan_Resume.pdf" download class="bg-gray-700 text-white px-6 py-3 rounded-full font-medium btn hover:bg-gray-800">Download Resume</a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="card">
-            <p>Detail-oriented and compassionate doctor with extensive experience in Internal Medicine, Clinical Documentation, and Medical Chart Review. I am passionate about delivering high-quality, evidence-based patient care while improving healthcare efficiency and outcomes. My goal is to further develop expertise in Clinical Documentation Integrity, ensuring accurate diagnoses and optimized reimbursements.</p>
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">About Me</h2>
+            <div class="bg-gray-50 rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <p class="text-gray-600 leading-relaxed text-base">Detail-oriented and compassionate doctor with extensive experience in Internal Medicine, Clinical Documentation, and Medical Chart Review. I am passionate about delivering high-quality, evidence-based patient care while improving healthcare efficiency and outcomes. My goal is to further develop expertise in Clinical Documentation Integrity, ensuring accurate diagnoses and optimized reimbursements.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Experience Section with Timeline -->
-    <section id="experience" class="section gradient-bg">
-        <h2>Clinical Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Medical Extern – Internal Medicine & Critical Care</h3>
-                    <p>Holy Cross Hospital / Excellent Medical Associates, Chicago, IL (June 2024 – Present)</p>
-                    <ul>
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Education</h2>
+            <div class="bg-white rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <div class="flex items-start space-x-4">
+                    <svg class="w-6 h-6 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                    </svg>
+                    <div>
+                        <p class="text-gray-900 font-semibold text-base sm:text-lg">Bachelor of Medicine and Bachelor of Surgery (M.B.B.S.)</p>
+                        <p class="text-gray-600 text-sm">Shadan Institute of Medical Sciences, NTR University of Health Sciences, Hyderabad, India (2012–2019)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Clinical Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16">Clinical Experience</h2>
+
+    <div class="relative border-l-2 border-gray-300 ml-4 sm:ml-8">
+      
+      <!-- Timeline Item Template -->
+      <!-- Repeat this block for each item, updated below -->
+      <div class="mb-14 relative group">
+        <!-- Timeline Dot -->
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+
+        <!-- Content Box -->
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Internal Medicine & Critical Care</h3>
+            <span class="text-sm text-gray-500">June 2024 – Present</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">Holy Cross Hospital / Excellent Medical Associates, Chicago, IL</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Managed ICU patients focusing on ventilatory support, hemodynamic monitoring, and sepsis care.</li>
+            <li>Assessed sepsis, ARF, MOD, and cardiovascular compromise.</li>
+            <li>Supported post-ICU recovery and patient follow-up.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Repeat Below for Each Timeline Item -->
+      <div class="mb-14 relative group">
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Cardiology & Intensive Care</h3>
+            <span class="text-sm text-gray-500">April 2024 – May 2024</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">St. Mary Medical Center, Hobart, IN</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Rotated in ICU, Cath Lab, and cardiac wards, managing ACS and arrhythmias.</li>
+            <li>Gained expertise in EKGs, echo, and angiography.</li>
+            <li>Assisted in pre-op cardiac risk clearance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-14 relative group">
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Medical Intern – Inpatient Wards</h3>
+            <span class="text-sm text-gray-500">June 2023 – October 2023</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">Desert Valley Hospital, Victorville, CA</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Managed diverse patients with sepsis, pneumonia, diabetes complications, and MOD.</li>
+            <li>Presented a case report on pulmonary embolism.</li>
+            <li>Engaged in journal clubs and didactic sessions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-14 relative group">
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Critical Care & Internal Medicine</h3>
+            <span class="text-sm text-gray-500">Feb 2024 – Apr 2024</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">Silver Cross Hospital, New Lenox, IL</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Assisted in ICU and step-down units, managing ARDS and sepsis patients.</li>
+            <li>Refined EKG and echocardiography interpretation skills.</li>
+            <li>Worked closely with intensivists for acute care management.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-14 relative group">
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Internal Medicine</h3>
+            <span class="text-sm text-gray-500">June 2022 – July 2022</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">UW Health SwedishAmerican Hospital, Rockford, IL</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Provided inpatient and outpatient care with diagnostic and treatment planning.</li>
+            <li>Managed chronic conditions including HTN, DM, and COPD.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-14 relative group">
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Clinical Care Coordinator / Chart Reviewer</h3>
+            <span class="text-sm text-gray-500">Mar 2022 – May 2023</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">Excellent Medical Associates, Orland Park, IL</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Managed home visits for 15–17 patients daily with exams and documentation.</li>
+            <li>Worked on diagnosis coding for billing optimization.</li>
+            <li>Educated patients on chronic disease prevention.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-14 relative group">
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Duty Medical Officer (COVID-19 Response)</h3>
+            <span class="text-sm text-gray-500">Sep 2021 – Mar 2022</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">Telangana Institute of Medical Sciences, Hyderabad, India</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Evaluated and treated COVID-19 cases using updated clinical guidelines.</li>
+            <li>Participated in rounds and ensured patient continuity of care.</li>
+            <li>Led outreach for awareness and vaccination.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-14 relative group">
+        <div class="absolute -left-2 top-1.5 w-4 h-4 bg-blue-700 border-4 border-white rounded-full shadow-md"></div>
+        <div class="ml-6 bg-gray-50 p-6 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+          <div class="flex justify-between items-center flex-wrap mb-2">
+            <h3 class="text-lg font-semibold text-blue-700">Medical Officer – Outpatient & Preventive Medicine</h3>
+            <span class="text-sm text-gray-500">Sep 2019 – Sep 2021</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">Govt Primary Health Center, Hyderabad, India</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+            <li>Managed high-volume outpatient services for chronic and preventive care.</li>
+            <li>Led patient education and screening/vaccination programs.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!--   Clinical Experience Section
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Clinical Experience</h2>
+            <div class="space-y-6">
+                Experience 1
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Internal Medicine & Critical Care</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Holy Cross Hospital / Excellent Medical Associates, Chicago, IL (June 2024 – Present)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
                         <li>Managed ICU patients, focusing on ventilatory support, hemodynamic monitoring, and sepsis management.</li>
                         <li>Conducted comprehensive assessments for Sepsis, Acute Respiratory Failure, multi-organ dysfunction, and cardiovascular compromise.</li>
                         <li>Assisted in post-ICU recovery planning and patient follow-up.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <h3>Medical Extern – Cardiology & Intensive Care</h3>
-                    <p>St. Mary Medical Center, Hobart, IN (April 2024 – May 2024)</p>
-                    <ul>
+                </article>
+                Experience 2
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Cardiology & Intensive Care</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">St. Mary Medical Center, Hobart, IN (April 2024 – May 2024)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
                         <li>Rotated in ICU, Cath Lab, and cardiac wards, managing acute coronary syndromes and arrhythmias.</li>
                         <li>Gained expertise in EKGs, echocardiograms, and angiography interpretation.</li>
                         <li>Assisted in pre-operative risk assessment and clearance for cardiac procedures.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Medical Intern – Inpatient Wards</h3>
-                    <p>Desert Valley Hospital, Victorville, CA (June 2023 – October 2023)</p>
-                    <ul>
-                        <li>Managed patients with Sepsis, pneumonia, diabetes complications, and multi-organ dysfunction.</li>
-                        <li>Presented a case report on pulmonary embolism and joined journal clubs and didactics.</li>
-                        <li>Enhanced diagnostic and clinical decision-making skills.</li>
+                </article>
+                Experience 3
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Medical Intern – Inpatient Wards</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Desert Valley Hospital, Victorville, CA (June 2023 – October 2023)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
+                        <li>Managed diverse patient populations, including Sepsis, pneumonia, diabetes complications, and multi-organ dysfunction.</li>
+                        <li>Presented a case report on pulmonary embolism and participated in journal clubs and didactics.</li>
+                        <li>Developed strong clinical decision-making and diagnostic skills.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <h3>Medical Extern – Critical Care & Internal Medicine</h3>
-                    <p>Silver Cross Hospital, New Lenox, IL (February 2024 – April 2024)</p>
-                    <ul>
-                        <li>Worked in ICU and step-down units with critically ill patients.</li>
-                        <li>Focused on ventilatory and hemodynamic support, ARDS, and sepsis.</li>
-                        <li>Improved echocardiography and bedside evaluation skills.</li>
+                </article>
+                Experience 4
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Critical Care & Internal Medicine</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Silver Cross Hospital, New Lenox, IL (February 2024 – April 2024)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
+                        <li>Assisted in ICU and step-down units, managing critically ill (Sepsis and ARDS) patients requiring ventilatory and hemodynamic support.</li>
+                        <li>Enhanced skills in EKG interpretation, echocardiography, and bedside evaluations.</li>
+                        <li>Worked closely with intensivists to manage sepsis, acute kidney injury, and respiratory failure.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Medical Extern – Internal Medicine</h3>
-                    <p>UW Health SwedishAmerican Hospital, Rockford, IL (June 2022 – July 2022)</p>
-                    <ul>
-                        <li>Provided inpatient and outpatient care with focus on chronic disease management.</li>
-                        <li>Participated in diagnostic evaluations and treatment planning.</li>
+                </article>
+                Experience 5
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Medical Extern – Internal Medicine</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">UW Health SwedishAmerican Hospital, Rockford, IL (June 2022 – July 2022)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
+                        <li>Provided comprehensive inpatient and outpatient care, emphasizing diagnostic evaluation and treatment planning.</li>
+                        <li>Assisted in managing chronic conditions such as hypertension, diabetes, and COPD.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <h3>Clinical Care Coordinator / Medical Chart Reviewer</h3>
-                    <p>Excellent Medical Associates, Orland Park, IL (March 2022 – May 2023)</p>
-                    <ul>
-                        <li>Managed 15–17 homebound patients daily, including history and physicals.</li>
-                        <li>Worked on documentation and diagnosis coding for optimal reimbursement.</li>
+                </article>
+                Experience 6
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Clinical Care Coordinator / Medical Chart Reviewer</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Excellent Medical Associates, Orland Park, IL (March 2022 – May 2023)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
+                        <li>Managed 15–17 homebound patients daily, performing history-taking and physical exams.</li>
+                        <li>Gained experience in documentation and diagnosis coding for reimbursement optimization.</li>
+                        <li>Educated patients on chronic disease management and preventive healthcare measures.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Duty Medical Officer (COVID-19 Response & General Medicine)</h3>
-                    <p>Telangana Institute of Medical Sciences, Hyderabad, India (September 2021 – March 2022)</p>
-                    <ul>
-                        <li>Managed COVID-19 patients with evidence-based care.</li>
-                        <li>Participated in bedside rounds and led outreach for vaccination awareness.</li>
+                </article>
+                Experience 7
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Duty Medical Officer (COVID-19 Response & General Medicine)</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Telangana Institute of Medical Sciences, Hyderabad, India (September 2021 – March 2022)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
+                        <li>Evaluated and monitored COVID-19 patients, implementing evidence-based treatment strategies.</li>
+                        <li>Participated in daily bedside rounds, ensuring continuity of care and effective communication.</li>
+                        <li>Led community outreach programs for COVID-19 awareness and vaccination.</li>
                     </ul>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <h3>Medical Officer – Outpatient & Preventive Medicine</h3>
-                    <p>Government PHC, Hyderabad, India (September 2019 – September 2021)</p>
-                    <ul>
-                        <li>Handled high-volume outpatient care for chronic conditions and preventive medicine.</li>
+                </article>
+                Experience 8
+                <article class="relative bg-gray-50 rounded-2xl shadow-sm p-6 card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-3 h-3 bg-blue-700 rounded-full"></div>
+                        <h3 class="text-lg font-semibold text-blue-700">Medical Officer – Outpatient & Preventive Medicine</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Government Primary Health Care Center, Hyderabad, India (September 2019 – September 2021)</p>
+                    <ul class="list-disc pl-5 text-gray-600 text-base space-y-2">
+                        <li>Managed high patient volumes in outpatient settings, delivering wellness exams and chronic disease management.</li>
+                        <li>Educated patients on preventive healthcare measures, screenings, and vaccinations.</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Clinical Skills -->
-<section id="skills" class="section">
-        <h2>Clinical & Documentation Skills</h2>
-        <div class="card">
-            <ul>
-                <li>Clinical Documentation Integrity (CDI): Familiar with DRG, APR-DRGs, SOI documentation and reimbursement optimization.</li>
-                <li>EMR Systems: Proficient in EPIC, Meditech, NextGen, OmniMD, Practice Fusion.</li>
-                <li>Strong clinical acumen in internal medicine and critical care.</li>
-                <li>Excellent communication and teamwork skills.</li>
-                <li>High attention to detail for precise documentation and care.</li>
-            </ul>
+    <!-- <section id="skills" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Clinical & Documentation Skills</h2>
+            <div class="bg-white rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <ul class="space-y-4 text-gray-600 text-base">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><span class="font-semibold">Clinical Documentation Integrity (CDI):</span> Moderate experience with accurate documentation for reimbursement (DRG, APR-DRGs, SOI) and eager to learn more.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><span class="font-semibold">Electronic Medical Records (EMR):</span> Proficient in EPIC, Meditech, NextGen, OmniMD, and Practice Fusion.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 months
+                        </svg>
+                        <span><span class="font-semibold">Strong Clinical Acumen:</span> Skilled in diagnosing and managing a wide range of internal medicine conditions.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><span class="font-semibold">Interpersonal & Communication Skills:</span> Effective in collaborating with interdisciplinary teams and engaging with patients.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><span class="font-semibold">Attention to Detail:</span> Ensuring comprehensive and accurate documentation for optimal patient care and billing.</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </section>
+    </section> -->
+
+    <!-- Research & Publications Section -->
+    <section id="research" class="py-20 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">Research & Publications</h2>
+
+    <div class="space-y-6">
+      <!-- Research Card -->
+      <div class="flex items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 group">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-base font-semibold text-gray-900">Finalist, ACP Southern California Poster Presentation (2024)</h3>
+          <p class="text-sm text-gray-600 mt-1">"Undiagnosed Hashimoto’s Thyroiditis Presenting as Severe Pericardial Effusion."</p>
+        </div>
+      </div>
+
+      <!-- Research Card -->
+      <div class="flex items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 group">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-base font-semibold text-gray-900">High-Impact Peer-Reviewed Publications</h3>
+          <p class="text-sm text-gray-600 mt-1">Co-authored multiple research articles in journals, including <em>The Lancet</em> and <em>Canadian Journal of Physiology and Pharmacology</em>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Clinical & Documentation Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">Clinical & Documentation Skills</h2>
+
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
+      
+      <!-- Skill Card -->
+      <div class="bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 flex items-start space-x-4 group">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-gray-900">Clinical Documentation Integrity (CDI)</h3>
+          <p class="text-sm text-gray-600 mt-1">Moderate experience with accurate documentation for reimbursement (DRG, APR-DRGs, SOI) and eager to learn more.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 flex items-start space-x-4 group">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-gray-900">Electronic Medical Records (EMR)</h3>
+          <p class="text-sm text-gray-600 mt-1">Proficient in EPIC, Meditech, NextGen, OmniMD, and Practice Fusion.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 flex items-start space-x-4 group">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-gray-900">Strong Clinical Acumen</h3>
+          <p class="text-sm text-gray-600 mt-1">Skilled in diagnosing and managing a wide range of internal medicine conditions.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 flex items-start space-x-4 group">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-gray-900">Interpersonal & Communication</h3>
+          <p class="text-sm text-gray-600 mt-1">Effective in collaborating with interdisciplinary teams and engaging with patients.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 flex items-start space-x-4 group">
+        <div class="flex-shrink-0">
+          <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-gray-900">Attention to Detail</h3>
+          <p class="text-sm text-gray-600 mt-1">Ensuring comprehensive and accurate documentation for optimal patient care and billing.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+   <!--  <section id="research" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Research & Publications</h2>
+            <div class="bg-gray-50 rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <ul class="space-y-4 text-gray-600 text-base">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <span><span class="font-semibold">Finalist, ACP Southern California Poster Presentation (2024):</span> "Undiagnosed Hashimoto’s Thyroiditis Presenting as Severe Pericardial Effusion."</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <span><span class="font-semibold">High-Impact Peer-Reviewed Publications:</span> Co-authored multiple research articles in journals, including The Lancet and Canadian Journal of Physiology and Pharmacology.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Honors & Awards Section -->
+<section id="honors" class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-semibold text-center text-gray-900 mb-12 tracking-tight">Honors & Awards</h2>
+    
+    <div class="grid gap-6 sm:grid-cols-2">
+      <!-- Award Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-blue-500">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+            </svg>
+          </div>
+          <h3 class="ml-4 text-lg font-medium text-gray-900">Excellence in Medical Research Award</h3>
+        </div>
+        <p class="text-gray-600 text-sm">Awarded in 2023 for outstanding research contributions.</p>
+      </div>
+
+      <!-- Award Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-blue-500">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 12h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
+            </svg>
+          </div>
+          <h3 class="ml-4 text-lg font-medium text-gray-900">Young Medical Achiever Award</h3>
+        </div>
+        <p class="text-gray-600 text-sm">Recognized in 2023 for impactful contributions during the COVID-19 pandemic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+   <!--  <section id="honors" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Honors & Awards</h2>
+            <div class="bg-white rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <ul class="space-y-4 text-gray-600 text-base">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7M5 19l7-7 7 7"></path>
+                        </svg>
+                        <span><span class="font-semibold">Excellence in Medical Research Award (2023)</span></span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7M5 19l7-7 7 7"></path>
+                        </svg>
+                        <span><span class="font-semibold">Young Medical Achiever Award (2023):</span> Recognized for contributions during the COVID-19 pandemic.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Certifications and Licenses Section -->
    
 
-    <!-- Research & Publications -->
-    <section id="research" class="section gradient-bg">
-        <h2>Research & Publications</h2>
-        <div class="card">
-            <ul>
-                <li>Final Flower, ACP Southern California Poster Presentation (2024): "Undiagnosed Hashimoto’s Thyroiditis Presenting as Severe Pericardial Effusion."</li>
-                <li>Co-authored peer-reviewed articles in <em>The Lancet</em> and <em>Canadian Journal of Physiology and Pharmacology</em>.</li>
-            </ul>
+    <!-- Professional Memberships Section -->
+    <section id="memberships" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Professional Memberships</h2>
+            <div class="bg-white rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <ul class="space-y-4 text-gray-600 text-base">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span><span class="font-semibold">American College of Physicians (ACP)</span></span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span><span class="font-semibold">Society of Hospital Medicine</span></span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Awards, Certifications, Memberships -->
-    <section id="honors" class="section">
-        <h2>Honors & Certifications</h2>
-        <div class="card">
-            <ul>
-                <li>Excellence in Medical Research Award (2023)</li>
-                <li>Young Medical Achiever Award (2023)</li>
-                <li>ACLS Certified (valid through July 2025)</li>
-                <li>BLS Certified (valid through July 2025)</li>
-                <li>ECFMG Certification</li>
-                <li>Missouri Assistant Physician License</li>
-            </ul>
-            <h3 style="font-size: 1.5rem; font-weight: 600; margin: 24px 0 16px; color: #000;">Professional Memberships</h3>
-            <ul>
-                <li>American College of Physicians (ACP)</li>
-                <li>Society of Hospital Medicine</li>
-            </ul>
-            <h3 style="font-size: 1.5rem; font-weight: 600; margin: 24px 0 16px; color: #000;">Skills & Interests</h3>
-            <ul>
-                <li>Strong clinical acumen, research, and documentation expertise</li>
-                <li>Enjoys team sports, fitness, and nutrition-focused cooking</li>
-            </ul>
+    <!-- Skills & Interests Section -->
+    <section id="interests" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Skills & Interests</h2>
+            <div class="bg-gray-50 rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <ul class="space-y-4 text-gray-600 text-base">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                        <span>Strong clinical acumen in internal medicine, critical care, and clinical documentation.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                        <span>Passion for hospital medicine, research, and procedural innovation.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                        <span>Enjoys team sports, fitness, and cooking with a focus on nutrition and wellness.</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section gradient-bg contact-section">
-        <h2>Contact Me</h2>
-        <div >
-            <p>Email: <a href="mailto:alizkhan99@gmail.com">alizkhan99@gmail.com</a></p>
-            <p>Phone: <a href="tel:+18156771094">+1 (815) 677-1094</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/zeeshan-ali-khan-399661219" target="_blank">linkedin.com/in/zeeshan-ali-khan</a></p>
-            <p>Let's connect to discuss opportunities in Internal Medicine and Clinical Documentation Integrity.</p>
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-in">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Contact</h2>
+            <div class="bg-white rounded-2xl shadow-sm p-6 sm:p-8 card">
+                <p class="text-gray-600 text-base text-center leading-relaxed">For inquiries, please reach out via <a href="tel:+18156771094" class="text-blue-700 hover:underline">phone</a> or <a href="https://www.linkedin.com/in/zeeshan-ali-khan-399661219" target="_blank" class="text-blue-700 hover:underline">LinkedIn</a>.</p>
+                <div class="mt-6 flex justify-center gap-3 sm:gap-4">
+                    <a href="tel:+18156771094" class="bg-blue-700 text-white px-6 py-3 rounded-full font-medium btn hover:bg-blue-800">Call Now</a>
+                    <a href="https://www.linkedin.com/in/zeeshan-ali-khan-399661219" target="_blank" class="bg-indigo-700 text-white px-6 py-3 rounded-full font-medium btn hover:bg-indigo-800">Message on LinkedIn</a>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const toggleButton = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        toggleButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
