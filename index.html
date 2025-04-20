@@ -103,7 +103,7 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
         <div class="text-center px-4 sm:px-6 fade-in">
-            <img src="https://github.com/drzeeshanalikhan/drzeeshanalikhan.github.io/raw/main/zeeshan.jpg" alt="Dr. Zeeshan Ali Khan" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto border-4 border-white shadow-md mb-6 object-cover">
+            <img src="https://github.com/drzeeshanalikhan/drzeeshanalikhan.github.io/raw/main/zeeshan.jpg" alt="Dr. Zeeshan Ali Khan"  class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto border-4 border-white shadow-md mb-6 object-cover">
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">Dr. Zeeshan Ali Khan, M.B.B.S.</h1>
             <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">ECFMG Certified Physician Specializing in Internal Medicine & Clinical Documentation</p>
             <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
@@ -705,12 +705,36 @@
     </section>
 
     <!-- JavaScript for Mobile Menu Toggle -->
+        <!-- JavaScript for Mobile Menu Toggle -->
     <script>
-        const toggleButton = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        toggleButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+       const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Toggle menu on button click
+    toggleButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Prevent clicks inside the menu from bubbling up
+    mobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+
+    // Close menu when a menu item is clicked
+    const menuItems = mobileMenu.querySelectorAll('a'); // adjust selector as needed
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
         });
+    });
     </script>
 </body>
 </html>
